@@ -1,0 +1,31 @@
+{
+  "name": "cursoangularbadajoz",
+  "version": "1.0.0",
+  "description": "Curso de Angular",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/into28/cursoAngularBadajoz.git"
+  },
+  "keywords": [
+    "Web",
+    "SPA",
+    "AngularJS"
+  ],
+  "author": "Antonia Domínguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/into28/cursoAngularBadajoz/issues"
+  },
+  "homepage": "https://github.com/into28/cursoAngularBadajoz#readme",
+  "dependencies":{
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}
