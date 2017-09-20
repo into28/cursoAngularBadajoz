@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<!-- Ejemplo de AngularJS;
+	... -->
+
+<html lang="es">
+<head>
+	<meta name="keywords" content="web, learning, html5, css3, angularJS">
+	<meta name="author" content="Alejandro" >
+	<meta name="description" content="Ejercicios de angularJS">
+	<meta name="generator" content="Sublime Text">
+	<meta charset="UTF-8">
+	<title>Acumulador con clases</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/extra.css">
+	<link rel="icon" href="fav_icon.png">
+	<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../node_modules/jquery/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="js/appModule.js"></script>
+	<script type="text/javascript" src="js/AppController.js"></script>
+	<script type="text/javascript" src="js/appDirectivas.js"></script>
+</head>
+
+<body ng-app = "appModule" ng-controller= "AppController ">
+	<header>
+		<h1>Acumulador con clases</h1>
+	</header>
+	<article>
+
+		<h2 ng-class="tamTitular">Acumulador</h1>
+		<label>Elije en tamaño de letra del titular</label>
+		<select ng-model="tamTitular">
+			<option value="titularpeq">Pequeño</option>
+			<option value="titulargran">Grande</option>
+		</select>
+
+		<h2 ng-class="aClases">Control de operación:</h2>
+		<form name="formulario">
+			<label for="fNombre" id="lblNombre">Incremento</label>
+			<input type="number" id="fvalor" name="fvalor" size="4" ng-model="incremento" >
+
+			<label></label>
+			<input type="button"  id="btnMas" value="+"  ng-click="sumar()">	
+			<label></label>
+			<input type="button"  id="btnMenos" value="-" ng-click="restar()">
+
+		</form>
+		
+		<!-- Combo -->
+		<select ng-model="provinciaSeleccionada" ng-options="provincia as provincia.nombre for provincia in provincias track by provincia.idProvincia" >
+			<option value="">--Elige opcion--</option>
+		</select>
+		<p>La provicia seleccionada es: {{provinciaSeleccionada.nombre}}</p>
+		<!-- fin combo -->
+
+		<h2>Totales:</h2>
+		<p>En el acumulador llevamos <b ng-class="{ positivo : total >= 0,  negativo : total < 0}">{{ total }}</b></p>
+	</article>
+	<!-- Directiva para poner el pie de página -->
+	<div app-pie></div>
+	 <!-- <app-pie></app-pie>--> <!-- otra manera de meter la directiva-->
+	<!-- Fin directiva-->
+	
+	<!--<footer>
+		<p>Antonia Domínguez Pozo</p>
+	</footer>-->
+
+	<script>
+		var oElement = document.querySelector('#div1');
+		oElement.innerHTML = "<ul><lib>Hola desde JS</lib></ul>"
+
+		var oElementLQ = $('#div2')
+		oElementLQ.html("<ul><lib>Hola desde JQuery</lib></ul>");
+
+	</script>
+
+</body>
+</html>
